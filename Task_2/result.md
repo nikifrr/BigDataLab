@@ -16,8 +16,3 @@ $hdfs dfs -put -f destinations.csv /user/hive/warehouse/destinations/destination
 ![screen](./screenshots/ls_hdfs.png)
 
 ![screen](./screenshots/hue_file_browser.png)
-
-Task_2\screenshots\hue - file browser.png
-
-
-
