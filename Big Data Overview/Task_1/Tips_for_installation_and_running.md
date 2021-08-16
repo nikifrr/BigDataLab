@@ -2,6 +2,10 @@
 
 sudo docker run ```-m 10000m --cpus=4``` --name=cdh_container --hostname=quickstart.cloudera --privileged=true -t -i -v /home/nk/hadoop:/src -p 8888:8888 -p 7180:7180 -p 80:80 -p 9999:50070 -p 8088:8088 cloudera/quickstart /usr/bin/docker-quickstart
 
+**Run Cloudera Manager**
+ sudo /home/cloudera/cloudera-manager --express
+
+service cloudera-scm-server restart
 
 **In Cloudera Manager you need manually to start roles**
 
