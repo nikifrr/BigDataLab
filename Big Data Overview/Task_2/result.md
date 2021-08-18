@@ -9,10 +9,10 @@ $ hdfs dfs -mkdir -p /user/hive/warehouse/train
 
 # put files to hdfs 
 ```
-$ cd src
+$ cd /src
 $ hdfs dfs -put -f destinations.csv /user/hive/warehouse/destinations/destinations.csv 
 $ hdfs dfs -put -f sample_submission.csv /user/hive/warehouse/sample_submission/sample_submission.csv 
-$ dfs dfs -put -f test.csv  /user/hive/warehouse/test/test.csv 
+$ hdfs dfs -put -f test.csv  /user/hive/warehouse/test/test.csv 
 $ hdfs dfs -put  -f train.csv /user/hive/warehouse/train/train.csv
 ```
 # result
