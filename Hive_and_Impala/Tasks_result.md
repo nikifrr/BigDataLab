@@ -175,8 +175,6 @@ With bucketing:
 
 ### 5. Top 3 countries
 
-TODO: try window function
-
 > Write hive script to calculate Top 3 most popular countries where booking is successful (booking = 1), make screenshots before and after script execution, copy hive script to archive.
 
 Query for Hive (not support ordering by count(*), need subquery ):
@@ -203,11 +201,21 @@ Result (Hive):
 ![s](./screenshots/hive_top_3_country.png)
 
 
+# Task 2
+
+>Write hive script to calculate the longest period of stay of couples with children, make screenshots before and after script execution, copy hive script to archive
+
+```
+select max (datediff(srch_co, srch_ci)) as max_days_steyed
+from train
+where srch_children_cnt > 0;
+```
+
+![days of stay](.\screenshots/days_of_stay_Hive-Query.png)
+
 # Task 3 
 
 > Write hive script to calculate top 3 most popular hotels (treat hotel as composite key of continent, country and market) which were not booked. Most popular means most searches in dataset. Not booked means column booked = 0, make screenshots before and after script execution, copy hive script to archive.
-
-
 
 
 Result (Hive):
