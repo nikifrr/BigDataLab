@@ -6,18 +6,15 @@
 NOTE: to work with json Hive needs SerDe to be added. Please copy to your external folder (/src/) json-serde-1.3-jar-with-dependencies.jar attached to the lesson materials and command ADD JAR /src/json-serde-1.3-jar-with-dependencies.jar; 
 before DDL expression. Required SerDe name is 'org.openx.data.jsonserde.JsonSerDe'
 
-**Process**: Add raw json to external table --> make query to select "flat" table
+Add JAR for json serialization/deserialization
+```
+ADD JAR     hdfs:///user/hive/jars/json-serde-1.3-jar-with-dependencies.jar;
+```
 
 
 ### Create nested table from json
 
 ```
-
-ADD JAR     hdfs:///user/hive/jars/json-serde-1.3-jar-with-dependencies.jar;
-create database if not exists hive_hw;
-use hive_hw;
-
-
 drop table if exists  struct_cities ;
 create external table struct_cities 
                                 ( 
@@ -52,7 +49,7 @@ select   country_code
        , avalible_2017 as cities_avalible_2017
        , avalible_2016 as cities_avalible_2016
        , avalible_2015 as cities_avalible_2015
-    -- , cities as raw_json_array
+
       
 from struct_cities
 lateral view inline(cities) city as code, city, timezone, avalible_2017, avalible_2016, avalible_2015;
@@ -211,7 +208,7 @@ from train
 where srch_children_cnt > 0;
 ```
 
-![days of stay](.\screenshots/days_of_stay_Hive-Query.png)
+![days of stay](./4screenshots/days_of_stay_Hive-Query.png)
 
 # Task 3 
 
@@ -245,4 +242,69 @@ Result (Impala):
 ![top3](./screenshots/impala_top_3_hotel.png)
 
 
+# Task 5
 
+
+>Create table using LATERAL VIEW explode() from struct_cities.csv and execute query which returns amount of potential tourists (searches) for available cities in 2015,2016,2017 in every country. In cases when there are more than 1 available city for 1 year, divide searches equally. Compare execution plans and time for unclustered and clustered version of the table `train`. Make screenshots of executions, add scripts and screenshots to archive
+
+
+Let's get count of cities for each year for all countries: 
+
+```
+create or replace view available_cities as
+  select country_code, year, count(*) as cities_count from
+    (select    country_code 
+             , 2017 as year
+     from struct_cities 
+     lateral view explode (cities.available_2017) a17 as available_2017
+     where  available_2017 = 'TRUE'
+ 
+     union all
+ 
+     select    country_code 
+            , 2016 as year
+     from struct_cities 
+     lateral view explode (cities.available_2016) a16 as available_2016
+     where  available_2016 = 'TRUE'
+ 
+     union all
+ 
+     select    country_code 
+             , 2015 as year
+     from struct_cities 
+     lateral view explode (cities.available_2015) a15 as available_2015
+     where  available_2015 = 'TRUE'
+     ) city_year
+  group by country_code, year
+;
+
+```
+
+![cities_by_year](.\screenshots\available_cities.png)
+
+
+Get count of people who searched hotels in a country (group by year of potential check-in). 
+```
+create or replace view interested_tourists as
+  select hotel_country, YEAR(srch_ci) as year, count(*) as tourists_count  
+  from train t
+  where YEAR(srch_ci) in (2015, 2016, 2017)    
+  group by hotel_country, YEAR(srch_ci);
+
+```
+![interested_tourists](./screenshots/interested_tourists.png)
+
+Finally:
+```
+select it.hotel_country
+     , it.year
+     , it.tourists_count
+     , ac.cities_count
+     , it.tourists_count / ac.cities_count as potential_tourists -- divide searches equally 
+from interested_tourists it
+ join available_cities ac
+         on it.hotel_country = ac.country_code and
+            it.year = ac.year;
+
+```
+![potential_tourists](./screenshots/potential_tourists.png)
