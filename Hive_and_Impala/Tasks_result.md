@@ -111,6 +111,7 @@ drop table if exists train;
 
 ```
 create external table train
+-- create external table train_unclustered -- use this for unclustered version
                         (
                         date_time timestamp
                         ,site_name int
@@ -137,7 +138,7 @@ create external table train
                         ,hotel_market int
                         ,hotel_cluster int
                         )
-            clustered by (hotel_country) sorted by (hotel_country) into 32 buckets
+            clustered by (hotel_country) sorted by (hotel_country) into 32 buckets -- comment this line for unclustered version of table
             row format delimited fields terminated by ','
             location '/user/hive/warehouse/train'
             tblproperties ("skip.header.line.count"="1");
@@ -208,7 +209,7 @@ from train
 where srch_children_cnt > 0;
 ```
 
-![days of stay](./4screenshots/days_of_stay_Hive-Query.png)
+![days of stay](./screenshots/days_of_stay_Hive-Query.png)
 
 # Task 3 
 
@@ -280,7 +281,7 @@ create or replace view available_cities as
 
 ```
 
-![cities_by_year](.\screenshots\available_cities.png)
+![cities_by_year](./screenshots/available_cities.png)
 
 
 Get count of people who searched hotels in a country (group by year of potential check-in). 
@@ -308,3 +309,60 @@ from interested_tourists it
 
 ```
 ![potential_tourists](./screenshots/potential_tourists.png)
+
+The full task in one query:
+```
+with
+ available_cities as
+  (select country_code, year, count(*) as cities_count from
+    (select    country_code 
+             , 2017 as year
+     from struct_cities 
+     lateral view explode (cities.available_2017) a17 as available_2017
+     where  available_2017 = 'TRUE'
+ 
+     union all
+ 
+     select    country_code 
+            , 2016 as year
+     from struct_cities 
+     lateral view explode (cities.available_2016) a16 as available_2016
+     where  available_2016 = 'TRUE'
+ 
+     union all
+ 
+     select    country_code 
+             , 2015 as year
+     from struct_cities 
+     lateral view explode (cities.available_2015) a15 as available_2015
+     where  available_2015 = 'TRUE'
+     ) city_year
+  group by country_code, year
+  )
+  ,
+  
+ interested_tourists as
+  (
+  select hotel_country, YEAR(srch_ci) as year, count(*) as tourists_count  
+  from train t
+  where YEAR(srch_ci) in (2015, 2016, 2017)    
+  group by hotel_country, YEAR(srch_ci)
+  )
+
+
+select it.hotel_country
+     , it.year
+     , it.tourists_count
+     , ac.cities_count
+     , it.tourists_count / ac.cities_count as potential_tourists -- divide searches equally 
+from interested_tourists it
+ join available_cities ac
+         on it.hotel_country = ac.country_code and
+            it.year = ac.year;
+
+```
+![task5](./screenshots/task_5_one_query.png)
+
+Query to unclustered table works faster: 
+
+![jobs](./screenshots/Task_5_Jobs.png)
