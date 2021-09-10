@@ -1,0 +1,30 @@
+[2021-09-10 11:01:17,781] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: Homework-task2.download 2021-09-10T11:01:16.052362+00:00 [queued]>
+[2021-09-10 11:01:17,801] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: Homework-task2.download 2021-09-10T11:01:16.052362+00:00 [queued]>
+[2021-09-10 11:01:17,802] {taskinstance.py:1094} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-10 11:01:17,805] {taskinstance.py:1095} INFO - Starting attempt 1 of 6
+[2021-09-10 11:01:17,806] {taskinstance.py:1096} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-10 11:01:17,835] {taskinstance.py:1114} INFO - Executing <Task(BashOperator): download> on 2021-09-10T11:01:16.052362+00:00
+[2021-09-10 11:01:17,842] {standard_task_runner.py:52} INFO - Started process 268 to run task
+[2021-09-10 11:01:17,851] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'Homework-task2', 'download', '2021-09-10T11:01:16.052362+00:00', '--job-id', '330', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/task_2.py', '--cfg-path', '/tmp/tmpvx82o7w1', '--error-file', '/tmp/tmp1y6jxo90']
+[2021-09-10 11:01:17,853] {standard_task_runner.py:77} INFO - Job 330: Subtask download
+[2021-09-10 11:01:17,956] {logging_mixin.py:109} INFO - Running <TaskInstance: Homework-task2.download 2021-09-10T11:01:16.052362+00:00 [running]> on host ed2b66e7bf44
+[2021-09-10 11:01:18,164] {taskinstance.py:1251} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=Homework-task2
+AIRFLOW_CTX_TASK_ID=download
+AIRFLOW_CTX_EXECUTION_DATE=2021-09-10T11:01:16.052362+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-09-10T11:01:16.052362+00:00
+[2021-09-10 11:01:18,168] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-09-10 11:01:18,170] {subprocess.py:63} INFO - Running command: ['bash', '-c', 'mkdir -p $AIRFLOW_HOME/data; curl https://www.stats.govt.nz/assets/Uploads/Greenhouse-gas-emissions-by-region-industry-and-household/Greenhouse-gas-emissions-by-region-industry-and-household-year-ended-2018/Download-data/greenhouse-gas-emissions-by-region-industry-and-household-year-ended-2018-csv.csv > $AIRFLOW_HOME/data/downloaded_file.csv; echo file downloaded']
+[2021-09-10 11:01:18,197] {subprocess.py:74} INFO - Output:
+[2021-09-10 11:01:18,317] {subprocess.py:78} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2021-09-10 11:01:18,318] {subprocess.py:78} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
+[2021-09-10 11:01:21,862] {subprocess.py:78} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0 10  315k   10 35331    0     0  12095      0  0:00:26  0:00:02  0:00:24 12091100  315k  100  315k    0     0  91211      0  0:00:03  0:00:03 --:--:-- 91211
+[2021-09-10 11:01:21,864] {subprocess.py:78} INFO - file downloaded
+[2021-09-10 11:01:21,865] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-09-10 11:01:21,887] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=Homework-task2, task_id=download, execution_date=20210910T110116, start_date=20210910T110117, end_date=20210910T110121
+[2021-09-10 11:01:21,921] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-09-10 11:01:21,941] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check
