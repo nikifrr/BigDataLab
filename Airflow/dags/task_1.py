@@ -1,6 +1,6 @@
-"""
+'''
 Task 1 DAG for BigData lab homework.
-"""
+'''
 
 from airflow import DAG
 from airflow.operators.bash import BashOperator
@@ -25,10 +25,10 @@ with DAG('Homework-task1',
          description='Hellow-wording in Airflow',
          ) as dag:
 
-    dag.doc_md = """
+    dag.doc_md = '''
     This DAG prints messages "Good Morning", "Good day", "Good evening" to stdout in a separate task
     one after other.
-    """
+    '''
 
     t1 = BashOperator(
         task_id='Good-morning',

@@ -2,14 +2,18 @@
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.1.3/docker-compose.yaml'
 
 # Prepare environment
-# Linux:
-$mkdir -p ./dags ./logs ./plugins
-$echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+## Linux:
+```
+mkdir -p ./dags ./logs ./plugins
+echo -e "AIRFLOW_UID=\$(id -u)\nAIRFLOW_GID=0" > .env
+```
 
-# Windows:
->mkdir  dags logs plugins
->SET  AIRFLOW_UID=50000    
->SET  AIRFLOW_GID=0     
+## Windows:
+```
+mkdir  dags logs plugins <br>
+SET  AIRFLOW_UID=50000 <br>
+SET AIRFLOW_GID=0
+```
 
 # Perform data migration and create user account
 docker-compose up airflow-init
