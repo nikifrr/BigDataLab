@@ -1,0 +1,40 @@
+[2021-09-13 06:56:10,079] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: Homework-task2.convert_to_avro 2021-09-12T00:00:00+00:00 [queued]>
+[2021-09-13 06:56:10,346] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: Homework-task2.convert_to_avro 2021-09-12T00:00:00+00:00 [queued]>
+[2021-09-13 06:56:10,351] {taskinstance.py:1094} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-13 06:56:10,352] {taskinstance.py:1095} INFO - Starting attempt 1 of 6
+[2021-09-13 06:56:10,355] {taskinstance.py:1096} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-13 06:56:10,451] {taskinstance.py:1114} INFO - Executing <Task(PythonVirtualenvOperator): convert_to_avro> on 2021-09-12T00:00:00+00:00
+[2021-09-13 06:56:10,491] {standard_task_runner.py:52} INFO - Started process 27906 to run task
+[2021-09-13 06:56:10,520] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'Homework-task2', 'convert_to_avro', '2021-09-12T00:00:00+00:00', '--job-id', '452', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/task_2.py', '--cfg-path', '/tmp/tmp3oq54zjl', '--error-file', '/tmp/tmptxmpwy6w']
+[2021-09-13 06:56:10,527] {standard_task_runner.py:77} INFO - Job 452: Subtask convert_to_avro
+[2021-09-13 06:56:11,100] {logging_mixin.py:109} INFO - Running <TaskInstance: Homework-task2.convert_to_avro 2021-09-12T00:00:00+00:00 [running]> on host ed2b66e7bf44
+[2021-09-13 06:56:11,400] {taskinstance.py:1251} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=Homework-task2
+AIRFLOW_CTX_TASK_ID=convert_to_avro
+AIRFLOW_CTX_EXECUTION_DATE=2021-09-12T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-09-12T00:00:00+00:00
+[2021-09-13 06:56:11,419] {process_utils.py:135} INFO - Executing cmd: virtualenv /tmp/venvrib74yqk
+[2021-09-13 06:56:11,542] {process_utils.py:139} INFO - Output:
+[2021-09-13 06:56:15,599] {process_utils.py:143} INFO - created virtual environment CPython3.8.11.final.0-64 in 1603ms
+[2021-09-13 06:56:15,600] {process_utils.py:143} INFO -   creator CPython3Posix(dest=/tmp/venvrib74yqk, clear=False, no_vcs_ignore=False, global=False)
+[2021-09-13 06:56:15,603] {process_utils.py:143} INFO -   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/***/.local/share/virtualenv)
+[2021-09-13 06:56:15,607] {process_utils.py:143} INFO -     added seed packages: pip==21.2.4, setuptools==57.4.0, wheel==0.37.0
+[2021-09-13 06:56:15,608] {process_utils.py:143} INFO -   activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator
+[2021-09-13 06:56:15,809] {process_utils.py:135} INFO - Executing cmd: /tmp/venvrib74yqk/bin/pip install fastavro==1.4.4
+[2021-09-13 06:56:15,851] {process_utils.py:139} INFO - Output:
+[2021-09-13 06:56:28,254] {process_utils.py:143} INFO - Collecting fastavro==1.4.4
+[2021-09-13 06:56:28,294] {process_utils.py:143} INFO -   Using cached fastavro-1.4.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.7 MB)
+[2021-09-13 06:56:29,041] {process_utils.py:143} INFO - Installing collected packages: fastavro
+[2021-09-13 06:56:29,815] {process_utils.py:143} INFO - Successfully installed fastavro-1.4.4
+[2021-09-13 06:56:30,776] {process_utils.py:135} INFO - Executing cmd: /tmp/venvrib74yqk/bin/python /tmp/venvrib74yqk/script.py /tmp/venvrib74yqk/script.in /tmp/venvrib74yqk/script.out /tmp/venvrib74yqk/string_args.txt
+[2021-09-13 06:56:30,855] {process_utils.py:139} INFO - Output:
+[2021-09-13 06:56:31,299] {process_utils.py:143} INFO - File content:
+[2021-09-13 06:56:31,320] {process_utils.py:143} INFO - [{'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2007, 'data_val': 811.63}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2008, 'data_val': 777.95}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2009, 'data_val': 684.0}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2010, 'data_val': 706.56}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2011, 'data_val': 764.3}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2012, 'data_val': 725.02}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2013, 'data_val': 707.4}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2014, 'data_val': 678.92}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2015, 'data_val': 744.83}, {'region': 'Auckland', 'anzsic_descriptor': 'Agriculture', 'gas': 'Carbon dioxide equivalents', 'units': 'Kilotonnes', 'magnitude': 'Carbon dioxide equivalents', 'year': 2016, 'data_val': 901.67}]
+[2021-09-13 06:56:31,323] {process_utils.py:143} INFO - convert to avro OK
+[2021-09-13 06:56:31,670] {python.py:151} INFO - Done. Returned value was: None
+[2021-09-13 06:56:31,704] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=Homework-task2, task_id=convert_to_avro, execution_date=20210912T000000, start_date=20210913T065610, end_date=20210913T065631
+[2021-09-13 06:56:31,844] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-09-13 06:56:31,919] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
