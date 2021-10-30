@@ -1,0 +1,66 @@
+[2021-09-13 13:01:03,607] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: Homework-task3.pivot 2021-09-13T13:00:57.815239+00:00 [queued]>
+[2021-09-13 13:01:03,617] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: Homework-task3.pivot 2021-09-13T13:00:57.815239+00:00 [queued]>
+[2021-09-13 13:01:03,618] {taskinstance.py:1094} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-13 13:01:03,619] {taskinstance.py:1095} INFO - Starting attempt 1 of 6
+[2021-09-13 13:01:03,620] {taskinstance.py:1096} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-13 13:01:03,637] {taskinstance.py:1114} INFO - Executing <Task(PythonVirtualenvOperator): pivot> on 2021-09-13T13:00:57.815239+00:00
+[2021-09-13 13:01:03,642] {standard_task_runner.py:52} INFO - Started process 51113 to run task
+[2021-09-13 13:01:03,645] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'Homework-task3', 'pivot', '2021-09-13T13:00:57.815239+00:00', '--job-id', '645', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/task_3.py', '--cfg-path', '/tmp/tmp4q4s4qtx', '--error-file', '/tmp/tmpjgdtevfz']
+[2021-09-13 13:01:03,646] {standard_task_runner.py:77} INFO - Job 645: Subtask pivot
+[2021-09-13 13:01:03,718] {logging_mixin.py:109} INFO - Running <TaskInstance: Homework-task3.pivot 2021-09-13T13:00:57.815239+00:00 [running]> on host ed2b66e7bf44
+[2021-09-13 13:01:03,772] {taskinstance.py:1251} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=Homework-task3
+AIRFLOW_CTX_TASK_ID=pivot
+AIRFLOW_CTX_EXECUTION_DATE=2021-09-13T13:00:57.815239+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-09-13T13:00:57.815239+00:00
+[2021-09-13 13:01:03,774] {process_utils.py:135} INFO - Executing cmd: virtualenv /tmp/venv5bpyyx5i
+[2021-09-13 13:01:03,784] {process_utils.py:139} INFO - Output:
+[2021-09-13 13:01:04,328] {process_utils.py:143} INFO - created virtual environment CPython3.8.11.final.0-64 in 304ms
+[2021-09-13 13:01:04,329] {process_utils.py:143} INFO -   creator CPython3Posix(dest=/tmp/venv5bpyyx5i, clear=False, no_vcs_ignore=False, global=False)
+[2021-09-13 13:01:04,331] {process_utils.py:143} INFO -   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/***/.local/share/virtualenv)
+[2021-09-13 13:01:04,332] {process_utils.py:143} INFO -     added seed packages: pip==21.2.4, setuptools==57.4.0, wheel==0.37.0
+[2021-09-13 13:01:04,333] {process_utils.py:143} INFO -   activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator
+[2021-09-13 13:01:04,356] {process_utils.py:135} INFO - Executing cmd: /tmp/venv5bpyyx5i/bin/pip install pandas==1.3.3 numpy==1.21.2
+[2021-09-13 13:01:04,369] {process_utils.py:139} INFO - Output:
+[2021-09-13 13:01:06,086] {process_utils.py:143} INFO - Collecting pandas==1.3.3
+[2021-09-13 13:01:06,124] {process_utils.py:143} INFO -   Using cached pandas-1.3.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.5 MB)
+[2021-09-13 13:01:06,730] {process_utils.py:143} INFO - Collecting numpy==1.21.2
+[2021-09-13 13:01:06,775] {process_utils.py:143} INFO -   Using cached numpy-1.21.2-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.8 MB)
+[2021-09-13 13:01:06,939] {process_utils.py:143} INFO - Collecting python-dateutil>=2.7.3
+[2021-09-13 13:01:06,945] {process_utils.py:143} INFO -   Using cached python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+[2021-09-13 13:01:07,197] {process_utils.py:143} INFO - Collecting pytz>=2017.3
+[2021-09-13 13:01:07,200] {process_utils.py:143} INFO -   Using cached pytz-2021.1-py2.py3-none-any.whl (510 kB)
+[2021-09-13 13:01:07,292] {process_utils.py:143} INFO - Collecting six>=1.5
+[2021-09-13 13:01:07,297] {process_utils.py:143} INFO -   Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+[2021-09-13 13:01:07,381] {process_utils.py:143} INFO - Installing collected packages: six, pytz, python-dateutil, numpy, pandas
+[2021-09-13 13:01:13,744] {process_utils.py:143} INFO - Successfully installed numpy-1.21.2 pandas-1.3.3 python-dateutil-2.8.2 pytz-2021.1 six-1.16.0
+[2021-09-13 13:01:13,999] {process_utils.py:135} INFO - Executing cmd: /tmp/venv5bpyyx5i/bin/python /tmp/venv5bpyyx5i/script.py /tmp/venv5bpyyx5i/script.in /tmp/venv5bpyyx5i/script.out /tmp/venv5bpyyx5i/string_args.txt
+[2021-09-13 13:01:14,008] {process_utils.py:139} INFO - Output:
+[2021-09-13 13:01:14,502] {process_utils.py:143} INFO -                      data_val             ...
+[2021-09-13 13:01:14,503] {process_utils.py:143} INFO - year                     2007       2008  ...       2018         All
+[2021-09-13 13:01:14,503] {process_utils.py:143} INFO - region                                    ...
+[2021-09-13 13:01:14,504] {process_utils.py:143} INFO - Auckland             55719.57   53230.69  ...   49922.80   607934.96
+[2021-09-13 13:01:14,504] {process_utils.py:143} INFO - Bay of Plenty        13939.95   14192.88  ...   15496.15   178085.95
+[2021-09-13 13:01:14,505] {process_utils.py:143} INFO - Canterbury           51204.05   49569.72  ...   57048.95   639225.29
+[2021-09-13 13:01:14,506] {process_utils.py:143} INFO - Gisborne              7126.68    7010.88  ...    6341.95    80301.54
+[2021-09-13 13:01:14,507] {process_utils.py:143} INFO - Hawke's Bay          16123.85   17531.38  ...   14884.42   187251.67
+[2021-09-13 13:01:14,507] {process_utils.py:143} INFO - Manawatu-Whanganui   28872.47   27189.75  ...   28194.98   335450.30
+[2021-09-13 13:01:14,508] {process_utils.py:143} INFO - Marlborough           3800.02    3891.54  ...    3715.56    45105.85
+[2021-09-13 13:01:14,508] {process_utils.py:143} INFO - Northland            24630.73   24725.46  ...   21753.61   278692.74
+[2021-09-13 13:01:14,509] {process_utils.py:143} INFO - Otago                23103.49   22410.97  ...   24744.91   282439.56
+[2021-09-13 13:01:14,510] {process_utils.py:143} INFO - Southland            26648.58   25646.67  ...   28363.20   334829.74
+[2021-09-13 13:01:14,510] {process_utils.py:143} INFO - Taranaki             30968.18   28868.56  ...   27463.66   349302.53
+[2021-09-13 13:01:14,511] {process_utils.py:143} INFO - Tasman/Nelson         5553.15    5539.07  ...    5595.55    65878.22
+[2021-09-13 13:01:14,511] {process_utils.py:143} INFO - Waikato              67935.07   76603.51  ...   66152.90   826126.28
+[2021-09-13 13:01:14,512] {process_utils.py:143} INFO - Wellington           16687.87   16793.34  ...   16009.45   192430.00
+[2021-09-13 13:01:14,512] {process_utils.py:143} INFO - West Coast            6053.68    6296.08  ...    6029.75    77773.49
+[2021-09-13 13:01:14,512] {process_utils.py:143} INFO - All                 378367.34  379500.50  ...  371717.84  4480828.12
+[2021-09-13 13:01:14,513] {process_utils.py:143} INFO - 
+[2021-09-13 13:01:14,513] {process_utils.py:143} INFO - [16 rows x 13 columns]
+[2021-09-13 13:01:14,685] {python.py:151} INFO - Done. Returned value was: /opt/***/data/pivoted_file.csv
+[2021-09-13 13:01:14,709] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=Homework-task3, task_id=pivot, execution_date=20210913T130057, start_date=20210913T130103, end_date=20210913T130114
+[2021-09-13 13:01:14,748] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-09-13 13:01:14,765] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
