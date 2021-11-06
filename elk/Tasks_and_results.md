@@ -3,7 +3,7 @@ Using previous example and Logstash guide from https://www.elastic.co/guide/en/l
 Create proper index-pattern and check whether data has been loaded correctly in the index.
 As the answer – provide link to a file, provide printscr of Kibana Discovery with data from the “test_users” index.
 
-# Result:
+## Result:
 
 [_elk/logstash_configs/pipelines/csv_users.cfg](_elk/logstash_configs/pipelines/csv_users.cfg)
 
@@ -13,6 +13,27 @@ ___
 
 # Task Q1
 Get 20 documents from “test_rating” index, where field country =“usa”. Use “term” in the filter.
+
+## Result
+
+``` GET test_rating/_search
+
+{
+ "query": {
+    "bool": {
+      "filter": {
+        "term": {
+           "Country.keyword": "usa"
+        }
+      }
+    }
+  }
+  ,
+    "size":20
+}
+```
+![Q1](./screenshots/Task_Q1.png)
+
 
 # Task A1
 Get average age for users from Sweden (use index test_users). We can filter documents before aggregating using “query” + “agg” clause. Or we just can filter during aggregating using sibling aggregation 

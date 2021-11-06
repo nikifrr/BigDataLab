@@ -1,0 +1,12 @@
+{
+  "size": 1, 
+  "query": {
+    "bool": {
+      "filter": {
+        "term": {
+          "ISBN.keyword": "%{[ISBN]}"
+        }
+      }
+    }
+  }
+}

@@ -42,6 +42,7 @@ services:
      - ./_elk/logstash_configs/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
      - ./_elk/logstash_configs/pipelines:/usr/share/logstash/config/pipelines:ro
      - ./_elk/input_data:/usr/share/logstash/input_data
+     - ./_elk/logstash_configs/es_query:/usr/share/logstash/config/es_query
 
 
 volumes:
