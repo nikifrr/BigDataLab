@@ -1,0 +1,400 @@
+#! Elasticsearch built-in security features are not enabled. Without authentication, your cluster could be accessible to anyone. See https://www.elastic.co/guide/en/elasticsearch/reference/7.15/security-minimal-setup.html to enable security.
+{
+  "took" : 4,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 10000,
+      "relation" : "gte"
+    },
+    "max_score" : 0.71287096,
+    "hits" : [
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "190759",
+        "_score" : 0.71287096,
+        "_source" : {
+          "Age" : 57,
+          "Location" : "virginia beach, va, usa, usa",
+          "@timestamp" : "2021-11-08T21:25:13.968Z",
+          "message" : "\"190759\";\"virginia beach, va, usa, usa\";\"57\"\r",
+          "@version" : "1",
+          "State" : "virginia beach",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "va",
+          "Country" : "usa, usa",
+          "User-ID" : "190759"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "249269",
+        "_score" : 0.71287096,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "dunnellon, florida, usa, usa",
+          "@timestamp" : "2021-11-08T21:38:18.707Z",
+          "message" : "\"249269\";\"dunnellon, florida, usa, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "dunnellon",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "florida",
+          "Country" : "usa, usa",
+          "User-ID" : "249269"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "965",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 24,
+          "Location" : "las cruces, new mexico, usa",
+          "@timestamp" : "2021-11-08T21:13:13.949Z",
+          "message" : "\"965\";\"las cruces, new mexico, usa\";\"24\"\r",
+          "@version" : "1",
+          "State" : "las cruces",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "new mexico",
+          "Country" : "usa",
+          "User-ID" : "965"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "969",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 13,
+          "Location" : "river forest, illinois, usa",
+          "@timestamp" : "2021-11-08T21:13:16.970Z",
+          "message" : "\"969\";\"river forest, illinois, usa\";\"13\"\r",
+          "@version" : "1",
+          "State" : "river forest",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "illinois",
+          "Country" : "usa",
+          "User-ID" : "969"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "973",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "eugene, oregon, usa",
+          "@timestamp" : "2021-11-08T21:13:16.971Z",
+          "message" : "\"973\";\"eugene, oregon, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "eugene",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "oregon",
+          "Country" : "usa",
+          "User-ID" : "973"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "975",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 34,
+          "Location" : "ann arbor, michigan, usa",
+          "@timestamp" : "2021-11-08T21:13:16.971Z",
+          "message" : "\"975\";\"ann arbor, michigan, usa\";\"34\"\r",
+          "@version" : "1",
+          "State" : "ann arbor",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "michigan",
+          "Country" : "usa",
+          "User-ID" : "975"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "977",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "benton, kansas, usa",
+          "@timestamp" : "2021-11-08T21:13:16.972Z",
+          "message" : "\"977\";\"benton, kansas, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "benton",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "kansas",
+          "Country" : "usa",
+          "User-ID" : "977"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "978",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 33,
+          "Location" : "alpharetta, georgia, usa",
+          "@timestamp" : "2021-11-08T21:13:16.972Z",
+          "message" : "\"978\";\"alpharetta, georgia, usa\";\"33\"\r",
+          "@version" : "1",
+          "State" : "alpharetta",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "georgia",
+          "Country" : "usa",
+          "User-ID" : "978"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "981",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "new york, new york, usa",
+          "@timestamp" : "2021-11-08T21:13:16.974Z",
+          "message" : "\"981\";\"new york, new york, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "new york",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "new york",
+          "Country" : "usa",
+          "User-ID" : "981"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "982",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 41,
+          "Location" : "sheffield, alabama, usa",
+          "@timestamp" : "2021-11-08T21:13:16.975Z",
+          "message" : "\"982\";\"sheffield, alabama, usa\";\"41\"\r",
+          "@version" : "1",
+          "State" : "sheffield",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "alabama",
+          "Country" : "usa",
+          "User-ID" : "982"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "984",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "college station, texas, usa",
+          "@timestamp" : "2021-11-08T21:13:16.976Z",
+          "message" : "\"984\";\"college station, texas, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "college station",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "texas",
+          "Country" : "usa",
+          "User-ID" : "984"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "986",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "alexandria, virginia, usa",
+          "@timestamp" : "2021-11-08T21:13:16.977Z",
+          "message" : "\"986\";\"alexandria, virginia, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "alexandria",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "virginia",
+          "Country" : "usa",
+          "User-ID" : "986"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "987",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "san diego, california, usa",
+          "@timestamp" : "2021-11-08T21:13:16.977Z",
+          "message" : "\"987\";\"san diego, california, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "san diego",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "california",
+          "Country" : "usa",
+          "User-ID" : "987"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "988",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "dallas, texas, usa",
+          "@timestamp" : "2021-11-08T21:13:16.977Z",
+          "message" : "\"988\";\"dallas, texas, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "dallas",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "texas",
+          "Country" : "usa",
+          "User-ID" : "988"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "989",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 33,
+          "Location" : "san antonio, texas, usa",
+          "@timestamp" : "2021-11-08T21:13:16.977Z",
+          "message" : "\"989\";\"san antonio, texas, usa\";\"33\"\r",
+          "@version" : "1",
+          "State" : "san antonio",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "texas",
+          "Country" : "usa",
+          "User-ID" : "989"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "990",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "selma, california, usa",
+          "@timestamp" : "2021-11-08T21:13:16.977Z",
+          "message" : "\"990\";\"selma, california, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "selma",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "california",
+          "Country" : "usa",
+          "User-ID" : "990"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "991",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 62,
+          "Location" : "charlotte, north carolina, usa",
+          "@timestamp" : "2021-11-08T21:13:16.978Z",
+          "message" : "\"991\";\"charlotte, north carolina, usa\";\"62\"\r",
+          "@version" : "1",
+          "State" : "charlotte",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "north carolina",
+          "Country" : "usa",
+          "User-ID" : "991"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "994",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "brownsville, texas, usa",
+          "@timestamp" : "2021-11-08T21:13:16.985Z",
+          "message" : "\"994\";\"brownsville, texas, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "brownsville",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "texas",
+          "Country" : "usa",
+          "User-ID" : "994"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "996",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "bellefonte, pennsylvania, usa",
+          "@timestamp" : "2021-11-08T21:13:16.986Z",
+          "message" : "\"996\";\"bellefonte, pennsylvania, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "bellefonte",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "pennsylvania",
+          "Country" : "usa",
+          "User-ID" : "996"
+        }
+      },
+      {
+        "_index" : "test_users",
+        "_type" : "_doc",
+        "_id" : "997",
+        "_score" : 0.6624854,
+        "_source" : {
+          "Age" : 0,
+          "Location" : "meeteetse, wyoming, usa",
+          "@timestamp" : "2021-11-08T21:13:16.986Z",
+          "message" : "\"997\";\"meeteetse, wyoming, usa\";NULL\r",
+          "@version" : "1",
+          "State" : "meeteetse",
+          "path" : "/usr/share/logstash/input_data/BX-Users.csv",
+          "host" : "de96db72f0f3",
+          "City" : "wyoming",
+          "Country" : "usa",
+          "User-ID" : "997"
+        }
+      }
+    ]
+  }
+}

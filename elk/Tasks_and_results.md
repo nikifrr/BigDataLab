@@ -16,23 +16,19 @@ Get 20 documents from “test_rating” index, where field country =“usa”. U
 
 ## Result
 
-``` GET test_rating/_search
-
-{
- "query": {
-    "bool": {
-      "filter": {
-        "term": {
-           "Country.keyword": "usa"
+``` 
+GET test_rating/_search
+{  
+  "size":20,
+  "query": {
+         "term": {
+           "Country":"usa"
         }
       }
-    }
-  }
-  ,
-    "size":20
 }
 ```
 ![Q1](./screenshots/Task_Q1.png)
+Result of query: [./query_results/Q1.json](./query_results/Q1.json)
 
 
 # Task A1
