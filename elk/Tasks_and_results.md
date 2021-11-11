@@ -30,18 +30,67 @@ GET test_rating/_search
 ![Q1](./screenshots/Task_Q1.png)
 Result of query: [./query_results/Q1.json](./query_results/Q1.json)
 
+__Note__: “Age” is needed in next tasks, so the field is not excluded
+
 
 # Task A1
 Get average age for users from Sweden (use index test_users). We can filter documents before aggregating using “query” + “agg” clause. Or we just can filter during aggregating using sibling aggregation 
 agg:{ 
    country_ag{}
 , agg:{av_age{}}
+} 
+
+
+
+## Result
+
+```
+GET test_users/_search
+{
+  "size": 0,
+    "query": {
+         "term": {
+           "Country":"sweden"
+        }
+      },
+  "aggs": {
+    "avg_age": {
+      "avg": {
+        "field": "Age"
+      }
+    }
+  }
 }
-You should write 2 queries
+```
+![A1](./screenshots/Task_A1.png)
+
 
 # Task A2
 Get average age of the users grouping by countries and cities.
 As the answer – provide link to a file with  4 (Q1,A1,A2) elasticsearch query.
+
+```
+GET test_users/_search
+{
+  "size":0,
+  "aggs": {
+    "countries": {
+      "terms": {
+        "field": "Country.keyword"
+      },  
+      "aggs": {
+        "avg_age": {
+          "avg": {
+            "field": "Age"
+          }
+        }
+      }
+    }
+  }
+}
+```
+![A1_2](./screenshots/Task_A1_2.png)
+
 
 # Task K1
 Create a visualization with average age for users grouping by counties and cities (as in task A2) using any type of view.
