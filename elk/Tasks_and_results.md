@@ -89,9 +89,23 @@ GET test_users/_search
   }
 }
 ```
-![A1_2](./screenshots/Task_A1_2.png)
+![A2](./screenshots/Task_A2.png)
 
 
 # Task K1
 Create a visualization with average age for users grouping by counties and cities (as in task A2) using any type of view.
 As the answer a print screen should be provided.
+
+## Result
+
+ 
+![K1](./screenshots/Task_K1.png)
+
+After quick sight on this visualization we can see that not all countries are countries... This is caused by "Location" column in source BX-Users.csv does not match pattern {city}, {state}, {country}.
+See example:
+
+![Bad_data](./screenshots/Pain_with_location.png)
+
+Here is example with bad data: "x" country with oldest users:
+
+![x](./screenshots/X_country.png)
