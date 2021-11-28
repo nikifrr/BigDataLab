@@ -1,0 +1,8 @@
+- pipeline.id: test
+  path.config: "/usr/share/logstash/config/pipelines/test.conf"
+- pipeline.id: csv_books
+  path.config: "/usr/share/logstash/config/pipelines/csv_books.cfg"
+- pipeline.id: csv_users
+  path.config: "/usr/share/logstash/config/pipelines/csv_users.cfg"
+- pipeline.id: csv_rating
+  path.config: "/usr/share/logstash/config/pipelines/csv_rating.cfg"
