@@ -43,6 +43,7 @@ agg:{
 
 
 ## Result
+### 1.  Siebling aggregation
 
 ```
 GET test_users/_search
@@ -64,6 +65,8 @@ GET test_users/_search
 ```
 ![A1](./screenshots/Task_A1.png)
 
+### Bucket aggregation 
+
 
 # Task A2
 Get average age of the users grouping by countries and cities.
@@ -72,21 +75,28 @@ As the answer – provide link to a file with  4 (Q1,A1,A2) elasticsearch query.
 ```
 GET test_users/_search
 {
-  "size":0,
-  "aggs": {
-    "countries": {
-      "terms": {
-        "field": "Country.keyword"
-      },  
-      "aggs": {
-        "avg_age": {
-          "avg": {
-            "field": "Age"
-          }
+    "size": 0,
+    "aggs": {
+        "countries": {
+            "terms": {
+                "field": "Country.keyword"
+            },
+            "aggs": {
+                "cities": {
+                    "terms": {
+                        "field": "City.keyword"
+                    },
+                    "aggs": {
+                        "avg_age": {
+                            "avg": {
+                                "field": "Age"
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
 ```
 ![A2](./screenshots/Task_A2.png)
@@ -99,13 +109,4 @@ As the answer a print screen should be provided.
 ## Result
 
  
-![K1](./screenshots/Task_K1.png)
-
-After quick sight on this visualization we can see that not all countries are countries... This is caused by "Location" column in source BX-Users.csv does not match pattern {city}, {state}, {country}.
-See example:
-
-![Bad_data](./screenshots/Pain_with_location.png)
-
-Here is example with bad data: "x" country with oldest users:
-
-![x](./screenshots/X_country.png)
+![K1](./screenshots/Task_K1-ages_by_country_and_city.png)
